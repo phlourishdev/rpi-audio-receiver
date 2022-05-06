@@ -21,6 +21,6 @@ EOF
 PRETTY_HOSTNAME=$(hostnamectl status --pretty)
 PRETTY_HOSTNAME=${PRETTY_HOSTNAME:-$(hostname)}
 
-sudo sed -i '0,/%H/{s://\tname = "%H:\tname = "'"${test_name}"':}' /etc/shairport-sync.conf
+sed -i '0,/%H/{s://\tname = "%H:\tname = "'"${test_name}"':}' /etc/shairport-sync.conf
 
 systemctl enable --now shairport-sync
