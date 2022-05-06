@@ -22,6 +22,4 @@ sudo sed -i 's:#LIBRESPOT_INITIAL_VOLUME="50":LIBRESPOT_INITIAL_VOLUME="20":' /e
 sudo sed -i 's:#LIBRESPOT_VOLUME_CTRL="log":LIBRESPOT_VOLUME_CTRL="cubic":' /etc/raspotify/conf
 
 systemctl daemon-reload
-
 systemctl enable raspotify
-systemctl reload raspotify
