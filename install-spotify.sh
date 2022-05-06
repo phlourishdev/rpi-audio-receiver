@@ -7,30 +7,20 @@ echo -n "Do you want to install Spotify Connect (Raspotify)? [y/N] "
 read REPLY
 if [[ ! "$REPLY" =~ ^(yes|y|Y)$ ]]; then exit 0; fi
 
-curl -sL https://dtcooper.github.io/raspotify/install.sh | sh
+wget -q https://github.com/dtcooper/raspotify/releases/download/0.31.4/raspotify_0.31.4.librespot.v0.3.1-34-ge5fd7d6_armhf.deb
+sudo dpkg -i raspotify_0.31.4.librespot.v0.3.1-34-ge5fd7d6_armhf.deb
 
 PRETTY_HOSTNAME=$(hostnamectl status --pretty | tr ' ' '-')
 PRETTY_HOSTNAME=${PRETTY_HOSTNAME:-$(hostname)}
 
-cat <<EOF > /etc/raspotify/conf
-LIBRESPOT_QUIET=
-LIBRESPOT_AUTOPLAY=
-LIBRESPOT_DISABLE_AUDIO_CACHE=
-LIBRESPOT_DISABLE_CREDENTIAL_CACHE=
-LIBRESPOT_ENABLE_VOLUME_NORMALISATION=
-LIBRESPOT_NAME="${PRETTY_HOSTNAME}"
-LIBRESPOT_DEVICE_TYPE="avr"
-LIBRESPOT_BITRATE="320"
-LIBRESPOT_INITIAL_VOLUME="100"
-EOF
+# change settings to work for raspberry pi zero
+sudo sed -i 's:LIBRESPOT_ENABLE_VOLUME_NORMALISATION=:#LIBRESPOT_ENABLE_VOLUME_NORMALISATION=:' /etc/raspotify/conf
+sudo sed -i 's:#LIBRESPOT_NAME="Librespot:LIBRESPOT_NAME="'"${PRETTY_HOSTNAME}"':' /etc/raspotify/conf
+sudo sed -i 's:#LIBRESPOT_BITRATE="160":LIBRESPOT_BITRATE="320":' /etc/raspotify/conf
+sudo sed -i 's:#LIBRESPOT_DEVICE_TYPE:LIBRESPOT_DEVICE_TYPE:' /etc/raspotify/conf
+sudo sed -i 's:#LIBRESPOT_INITIAL_VOLUME="50":LIBRESPOT_INITIAL_VOLUME="20":' /etc/raspotify/conf
+sudo sed -i 's:#LIBRESPOT_VOLUME_CTRL="log":LIBRESPOT_VOLUME_CTRL="cubic":' /etc/raspotify/conf
 
-mkdir -p /etc/systemd/system/raspotify.service.d
-cat <<'EOF' > /etc/systemd/system/raspotify.service.d/override.conf
-[Unit]
-Wants=pulseaudio.service
-[Service]
-SupplementaryGroups=pulse-access
-EOF
 systemctl daemon-reload
 
 systemctl enable raspotify
