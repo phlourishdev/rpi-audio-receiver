@@ -24,3 +24,4 @@ sudo sed -i 's:#LIBRESPOT_VOLUME_CTRL="log":LIBRESPOT_VOLUME_CTRL="cubic":' /etc
 systemctl daemon-reload
 
 systemctl enable raspotify
+systemctl reload raspotify
