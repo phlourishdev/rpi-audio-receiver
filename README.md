@@ -30,7 +30,7 @@ Lets you choose the hostname and the visible device name ("pretty hostname") whi
 
 ### Bluetooth
 
-Sets up Bluetooth, adds a simple agent that accepts every connection, and enables audio playback through PulseAudio. A udev script is installed that disables discoverability while connected.
+Sets up Bluetooth, adds a simple agent that accepts every connection, and enables audio playback through Alsa (via BlueAlsa). A udev script is installed that disables discoverability while connected.
 
 ### AirPlay 1
 
@@ -38,7 +38,7 @@ Installs [Shairport Sync](https://github.com/mikebrady/shairport-sync) AirPlay A
 
 ### Spotify Connect
 
-Installs [Raspotify](https://github.com/dtcooper/raspotify), an open source Spotify client for Raspberry Pi.
+Installs a working version of [Raspotify](https://github.com/dtcooper/raspotify), an open source Spotify client for Raspberry Pi.
 
 ## Limitations
 
