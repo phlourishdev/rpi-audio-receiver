@@ -14,11 +14,11 @@ PRETTY_HOSTNAME=$(hostnamectl status --pretty | tr ' ' '-')
 PRETTY_HOSTNAME=${PRETTY_HOSTNAME:-$(hostname)}
 
 # change settings to work for raspberry pi zero
-sudo sed -i 's:LIBRESPOT_ENABLE_VOLUME_NORMALISATION=:#LIBRESPOT_ENABLE_VOLUME_NORMALISATION=:' /etc/raspotify/conf
-sudo sed -i 's:#LIBRESPOT_NAME="Librespot:LIBRESPOT_NAME="'"${PRETTY_HOSTNAME}"':' /etc/raspotify/conf
-sudo sed -i 's:#LIBRESPOT_BITRATE="160":LIBRESPOT_BITRATE="320":' /etc/raspotify/conf
-sudo sed -i 's:#LIBRESPOT_DEVICE_TYPE:LIBRESPOT_DEVICE_TYPE:' /etc/raspotify/conf
-sudo sed -i 's:#LIBRESPOT_INITIAL_VOLUME="50":LIBRESPOT_INITIAL_VOLUME="20":' /etc/raspotify/conf
-sudo sed -i 's:#LIBRESPOT_VOLUME_CTRL="log":LIBRESPOT_VOLUME_CTRL="cubic":' /etc/raspotify/conf
+sed -i 's:LIBRESPOT_ENABLE_VOLUME_NORMALISATION=:#LIBRESPOT_ENABLE_VOLUME_NORMALISATION=:' /etc/raspotify/conf
+sed -i 's:#LIBRESPOT_NAME="Librespot:LIBRESPOT_NAME="'"${PRETTY_HOSTNAME}"':' /etc/raspotify/conf
+sed -i 's:#LIBRESPOT_BITRATE="160":LIBRESPOT_BITRATE="320":' /etc/raspotify/conf
+sed -i 's:#LIBRESPOT_DEVICE_TYPE:LIBRESPOT_DEVICE_TYPE:' /etc/raspotify/conf
+sed -i 's:#LIBRESPOT_INITIAL_VOLUME="50":LIBRESPOT_INITIAL_VOLUME="20":' /etc/raspotify/conf
+sed -i 's:#LIBRESPOT_VOLUME_CTRL="log":LIBRESPOT_VOLUME_CTRL="cubic":' /etc/raspotify/conf
 
 systemctl restart raspotify
