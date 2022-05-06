@@ -21,15 +21,6 @@ EOF
 PRETTY_HOSTNAME=$(hostnamectl status --pretty)
 PRETTY_HOSTNAME=${PRETTY_HOSTNAME:-$(hostname)}
 
-cat <<EOF > "/etc/shairport-sync.conf"
-general = {
-  name = "${PRETTY_HOSTNAME}";
-  output_backend = "pa";
-}
-
-sessioncontrol = {
-  session_timeout = 20;
-};
-EOF
+sudo sed -i '0,/%H/{s://\tname = "%H:\tname = "${PRETTY_HOSTNAME}:}' /etc/shairport-sync.conf
 
 systemctl enable --now shairport-sync
