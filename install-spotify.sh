@@ -21,5 +21,4 @@ sudo sed -i 's:#LIBRESPOT_DEVICE_TYPE:LIBRESPOT_DEVICE_TYPE:' /etc/raspotify/con
 sudo sed -i 's:#LIBRESPOT_INITIAL_VOLUME="50":LIBRESPOT_INITIAL_VOLUME="20":' /etc/raspotify/conf
 sudo sed -i 's:#LIBRESPOT_VOLUME_CTRL="log":LIBRESPOT_VOLUME_CTRL="cubic":' /etc/raspotify/conf
 
-systemctl daemon-reload
-systemctl enable raspotify
+systemctl restart raspotify
