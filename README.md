@@ -23,6 +23,8 @@ The installation script asks whether to install each component.
 
     cd rpi-audio-receiver-main
     sudo ./install.sh
+    
+All effects should come into play after restarting the device.
 
 ### Basic setup
 
