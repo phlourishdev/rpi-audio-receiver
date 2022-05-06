@@ -65,6 +65,14 @@ Updating the system using `apt-get upgrade` should work however.
 ## Uninstallation
 
 This project does not support uninstall at all. As stated above, it is meant to run on a dedicated device on a clean Raspberry Pi OS. If you choose to use this script along with other services on the same device, or install it on an already configured device, this can lead to unpredictable behaviour and can damage the existing installation permanently.
+However, trying to recreate the state can be tried with the following code. This does however not remove residual files and is experimental:
+
+    sudo apt-get purge raspotify
+    sudo apt-get purge shairport-sync
+    sudo systemctl disable bthelper@hci0.service
+    sudo systemctl disable bt-agent@hci0.service
+    sudo systemctl stop bthelper@hci0.service
+    sudo systemctl stop bt-agent@hci0.service
 
 ## Contributing
 
