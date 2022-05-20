@@ -17,11 +17,11 @@ Devices like phones, tablets and computers can play audio via this receiver.
 
 The installation script asks whether to install each component.
 
-    wget -q https://github.com/Arcadia197/rpi-audio-receiver/archive/main.zip
-    unzip main.zip
-    rm main.zip
+    wget -q https://github.com/Arcadia197/rpi-audio-receiver/archive/rpi-zero-w.zip
+    unzip rpi-zero-w.zip
+    rm rpi-zero-w.zip
 
-    cd rpi-audio-receiver-main
+    cd rpi-audio-receiver-rpi-zero-w
     sudo ./install.sh
     
 All effects should come into play after restarting the device (mainly the device hostname).
@@ -79,7 +79,7 @@ However, the important modules can be purged with the following commands. This d
     sudo systemctl disable bthelper@hci0.service bt-agent@hci0.service
     sudo systemctl stop bthelper@hci0.service bt-agent@hci0.service
 
-To remove the residual files of shairplay. [This site](https://github.com/mikebrady/shairport-sync/blob/master/INSTALL.md) provides helpful information on what to remove.
+[This site](https://github.com/mikebrady/shairport-sync/blob/master/INSTALL.md) gives information on residual files of shairplay which could be checked for removal.
 
 
 ## Contributing
