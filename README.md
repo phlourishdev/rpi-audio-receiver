@@ -36,7 +36,7 @@ Sets up Bluetooth, adds a simple agent that accepts every connection, and enable
 
     bt-agent
 
-### AirPlay 1
+### AirPlay
 
 Installs [Shairport Sync](https://github.com/mikebrady/shairport-sync) AirPlay Audio Receiver.
 
@@ -78,6 +78,9 @@ However, the important modules can be purged with the following commands. This d
     sudo apt-get purge raspotify shairport-sync snapclient
     sudo systemctl disable bthelper@hci0.service bt-agent@hci0.service
     sudo systemctl stop bthelper@hci0.service bt-agent@hci0.service
+
+To remove the residual files of shairplay. [This site](https://github.com/mikebrady/shairport-sync/blob/master/INSTALL.md) provides helpful information on what to remove.
+
 
 ## Contributing
 
