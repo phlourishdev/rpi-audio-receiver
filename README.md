@@ -34,7 +34,7 @@ Lets you choose the hostname and the visible device name ("pretty hostname") whi
 
 Sets up Bluetooth, adds a simple agent that accepts every connection, and enables audio playback through Alsa (via BlueAlsa). A udev script is installed that disables discoverability while connected. In case of problems with accepting the connections, they can be added manually with
 
-    bt-agent
+    sudo bt-agent
 
 ### AirPlay
 
