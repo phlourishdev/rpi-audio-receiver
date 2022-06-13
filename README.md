@@ -32,9 +32,7 @@ Lets you choose the hostname and the visible device name ("pretty hostname") whi
 
 ### Bluetooth
 
-Sets up Bluetooth, adds a simple agent that accepts every connection, and enables audio playback through Alsa (via BlueAlsa). A udev script is installed that disables discoverability while connected. In case of problems with accepting the connections, they can be added manually with
-
-    sudo bt-agent
+Sets up Bluetooth, adds a simple agent that accepts every connection, and enables audio playback through Alsa (via BlueAlsa). A udev script is installed that disables discoverability while connected.
 
 ### AirPlay
 
@@ -48,17 +46,9 @@ Installs a working version of [Raspotify](https://github.com/dtcooper/raspotify)
 
 Installs [Snapclient](https://github.com/badaix/snapcast), the client component of the Snapcast Synchronous multi-room audio player.
 
-## Limitations
-
-- Only one Bluetooth device can be connected at a time, otherwise interruptions may occur.
-- The device is always open, new clients can connect at any time without authentication.
-- To permanently save paired devices when using read-only mode, the Raspberry has to be switched to read-write mode until all devices have been paired once.
-- You might want to use a Bluetooth USB dongle or have the script disable Wi-Fi while connected (see `bluetooth-udev`), as the BCM43438 (Raspberry Pi 3, Zero W) has severe problems with both switched on, see [raspberrypi/linux/#1402](https://github.com/raspberrypi/linux/issues/1402).
-- The Pi Zero may not be powerful enough to play 192 kHz audio, you may want to change the values in `/etc/asound.conf` accordingly.
-
 ## Wiki
 
-There are some further examples, tweaks and how-tos in the [GitHub Wiki](https://github.com/nicokaiser/rpi-audio-receiver/wiki).
+There are some further examples, tweaks and how-tos in the [GitHub Wiki](https://github.com/Arcadia197/rpi-audio-receiver/wiki) or the [wiki of the original repo](github.com/nicokaiser/rpi-audio-receiver/wiki).
 
 ## Disclaimer
 
