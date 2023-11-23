@@ -1,7 +1,7 @@
 ## Raspberry Pi Audio Receiver - Fork of Project from Nicokaiser working for raspberry pi zero w
 
 A simple, light weight audio receiver with Bluetooth (A2DP), AirPlay 1, Spotify Connect and Snapcast client.
-Original repository can be found [here](github.com/nicokaiser/rpi-audio-receiver).
+Original repository can be found [here](https://github.com/nicokaiser/rpi-audio-receiver).
 
 ## Features
 
