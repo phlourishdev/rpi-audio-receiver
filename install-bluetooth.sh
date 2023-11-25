@@ -7,9 +7,6 @@ echo -n "Do you want to install Bluetooth Audio (BlueALSA)? [y/N] "
 read REPLY
 if [[ ! "$REPLY" =~ ^(yes|y|Y)$ ]]; then exit 0; fi
 
-# overwrite sspmode - needed because elsewise some pairings fail no matter what
-hciconfig hci0 sspmode 0
-
 apt install -y --no-install-recommends alsa-base alsa-utils bluealsa bluez-tools
 
 # Bluetooth settings
