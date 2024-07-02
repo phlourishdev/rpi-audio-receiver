@@ -7,7 +7,7 @@ echo -n "Do you want to install Bluetooth Audio (BlueALSA)? [y/N] "
 read REPLY
 if [[ ! "$REPLY" =~ ^(yes|y|Y)$ ]]; then exit 0; fi
 
-apt install -y --no-install-recommends alsa-base alsa-utils bluealsa bluez-tools
+apt install -y --no-install-recommends alsa-base alsa-utils bluez-alsa-utils bluez-tools
 
 # Bluetooth settings
 cat <<'EOF' > /etc/bluetooth/main.conf
