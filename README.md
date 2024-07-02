@@ -11,7 +11,7 @@ Devices like phones, tablets and computers can play audio via this receiver.
 
 - RaspberryPi Zero W with internal Bluetooth or a USB Bluetooth dongle. Using the internal Bluetooth is possible but might lead to audio distortions if using other network heavy services
 - Raspberry Pi OS Buster Lite (legacy)
-    - Please note: This version **does not** work with Raspberry Pi OS Bullseye or newer versions, as the zero 1 w chip cannot handle Bluetooth audio with Pulseaudio
+    - Please note: This version **does not** work with Raspberry Pi OS Bullseye or newer versions, as the zero 1 w chip cannot handle Bluetooth audio with Pulseaudio. Alternatively use Raspberry Pi OS Lite, which does not come with an audio daemon like Pulseaudio.
 - Internal audio, HDMI, USB or I2S Audio adapter (tested with [Adafruit USB Audio Adapter](https://www.adafruit.com/product/1475),  [pHAT DAC](https://shop.pimoroni.de/products/phat-dac), and [HifiBerry DAC+](https://www.hifiberry.com/products/dacplus/))
 
 ## Installation
